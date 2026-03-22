@@ -67,7 +67,7 @@
                 android:paddingStart="46dp"
                 android:paddingEnd="14dp"
                 android:hint="Search songs, artists, albums..."
-                android:hintTextColor="#444444"
+                android:textColorHint="#444444"
                 android:textColor="#E0E0E0"
                 android:textSize="14sp"
                 android:background="@null"
@@ -190,7 +190,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:selected="true" />
+                     />
 
                 <TextView
                     android:id="@+id/miniArtist"
