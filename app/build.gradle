@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 android {
@@ -59,14 +58,13 @@ dependencies {
     implementation 'androidx.media3:media3-session:1.2.0'
     implementation 'androidx.media3:media3-ui:1.2.0'
 
-    // Room Database — for playlists & favourites
+    // Room Database
     implementation 'androidx.room:room-runtime:2.6.1'
     implementation 'androidx.room:room-ktx:2.6.1'
-    kapt 'androidx.room:room-compiler:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
 
-    // Glide — album art loading
+    // Glide
     implementation 'com.github.bumptech.glide:glide:4.16.0'
-    kapt 'com.github.bumptech.glide:compiler:4.16.0'
 
     // Palette — extract colors from album art
     implementation 'androidx.palette:palette-ktx:1.0.0'
