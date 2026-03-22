@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeonPlayer</string>
+    <string name="wallpaper_label">Neon Music Visualizer</string>
+    <string name="wallpaper_description">Live audio visualizer wallpaper with neon bars and music note rain. Reacts to your music in real time.</string>
+</resources>

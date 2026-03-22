@@ -1,0 +1,5 @@
+-keep class com.neonplayer.** { *; }
+-keep public class * extends android.service.wallpaper.WallpaperService
+-keep public class * extends androidx.media3.session.MediaSessionService
+-dontwarn kotlin.**
+-keep class kotlin.** { *; }

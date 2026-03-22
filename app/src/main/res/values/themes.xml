@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.NeonPlayer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00BFFF</item>
+        <item name="colorPrimaryVariant">#0080AA</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#8A2BE2</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+        <item name="android:textColorPrimary">#E0E0E0</item>
+        <item name="android:textColorSecondary">#888888</item>
+        <item name="android:colorEdgeEffect">#00BFFF</item>
+    </style>
+
+    <style name="Theme.NeonPlayer.Translucent" parent="Theme.NeonPlayer">
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+</resources>

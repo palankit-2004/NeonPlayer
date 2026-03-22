@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- ══════ BACK BUTTON ══════ -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_down"
+        android:tint="#AAAAAA"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOW PLAYING"
+        android:textColor="#888888"
+        android:textSize="11sp"
+        android:letterSpacing="0.15"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ══════ ALBUM ART ══════ -->
+    <ImageView
+        android:id="@+id/imgAlbumArtLarge"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_album_art_large"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.36" />
+
+    <!-- ══════ WAVEFORM ══════ -->
+    <com.neonplayer.ui.views.WaveformView
+        android:id="@+id/waveformView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintTop_toBottomOf="@id/imgAlbumArtLarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ══════ SONG INFO ══════ -->
+    <LinearLayout
+        android:id="@+id/songInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/waveformView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvNowTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Song Title"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:selected="true" />
+
+        <TextView
+            android:id="@+id/tvNowArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Artist"
+            android:textColor="#00BFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvNowAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Album"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- ══════ SEEK BAR ══════ -->
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:progressTint="#00BFFF"
+        android:thumbTint="#00BFFF"
+        android:progressBackgroundTint="#1A1A2E"
+        app:layout_constraintTop_toBottomOf="@id/songInfoLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Time labels -->
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        android:textColor="#666666"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:layout_marginStart="28dp"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        android:textColor="#666666"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ══════ MAIN CONTROLS ══════ -->
+    <LinearLayout
+        android:id="@+id/mainControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentTime"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Shuffle -->
+        <ImageButton
+            android:id="@+id/btnNowShuffle"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@null"
+            android:src="@drawable/ic_shuffle"
+            android:tint="#00BFFF"
+            android:alpha="0.4" />
+
+        <!-- Previous -->
+        <ImageButton
+            android:id="@+id/btnNowPrev"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@null"
+            android:src="@drawable/ic_prev"
+            android:tint="#E0E0E0"
+            android:layout_marginHorizontal="12dp" />
+
+        <!-- Play / Pause — big button -->
+        <ImageButton
+            android:id="@+id/btnNowPlayPause"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_play_button_large"
+            android:src="@drawable/ic_play_large"
+            android:tint="#000000"
+            android:layout_marginHorizontal="12dp" />
+
+        <!-- Next -->
+        <ImageButton
+            android:id="@+id/btnNowNext"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@null"
+            android:src="@drawable/ic_next"
+            android:tint="#E0E0E0"
+            android:layout_marginHorizontal="12dp" />
+
+        <!-- Repeat -->
+        <ImageButton
+            android:id="@+id/btnNowRepeat"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@null"
+            android:src="@drawable/ic_repeat_off"
+            android:tint="#00BFFF"
+            android:alpha="0.4" />
+    </LinearLayout>
+
+    <!-- ══════ BOTTOM ACTIONS ══════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/mainControls"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Equalizer -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnEqualizer"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_button"
+                android:src="@drawable/ic_equalizer"
+                android:tint="#00BFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equalizer"
+                android:textColor="#666666"
+                android:textSize="10sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Set Wallpaper -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnSetWallpaper"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="🌌 Live Wallpaper"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:backgroundTint="#00BFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
