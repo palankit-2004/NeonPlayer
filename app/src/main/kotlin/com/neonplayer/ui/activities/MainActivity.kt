@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         miniArtist    = findViewById(R.id.miniArtist)
         miniPlayPause = findViewById(R.id.miniPlayPause)
         miniProgress  = findViewById(R.id.miniProgress)
+        miniTitle.isSelected = true
     }
 
     private fun setupRecyclerView() {
